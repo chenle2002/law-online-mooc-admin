@@ -1,6 +1,6 @@
-### 法途——法学在线教学管理平台（https://github.com/chenle2002/law-online-mooc-admin)
-> 说明: 这是本项目的用户端前端部分,后台管理系统见(https://github.com/chenle2002/law-online-mooc),
-用户前端见(https://github.com/chenle2002/law-online-mooc-web)
+### 法途——法学在线教学管理平台 管理端前端（https://github.com/chenle2002/law-online-mooc-admin)
+> 说明: 这是本项目的管理端前端部分,后台管理系统见(https://github.com/chenle2002/law-online-mooc),
+用户端前端见(https://github.com/chenle2002/law-online-mooc-web)
 #### 项目介绍
 该项目为云南大学大创校级立项项目，采用微服务架构，包含课程信息、视频点播、实时弹幕、人员管理、用户评论等模块。可供用户进行课程信息查看、课程选择、课程章节视频播放、发送弹幕、简单评论等功能，并支持管理员对课程信息、视频信息进行管理
 
