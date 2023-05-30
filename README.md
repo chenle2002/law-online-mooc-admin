@@ -1,16 +1,26 @@
-# vue-admin-template
+### 法途——法学在线教学管理平台（https://github.com/chenle2002/law-online-mooc-admin)
+> 说明: 这是本项目的用户端前端部分,后台管理系统见(https://github.com/chenle2002/law-online-mooc),
+用户前端见(https://github.com/chenle2002/law-online-mooc-web)
+#### 项目介绍
+该项目为云南大学大创校级立项项目，采用微服务架构，包含课程信息、视频点播、实时弹幕、人员管理、用户评论等模块。可供用户进行课程信息查看、课程选择、课程章节视频播放、发送弹幕、简单评论等功能，并支持管理员对课程信息、视频信息进行管理
 
-> A minimal vue admin template with Element UI & axios & iconfont & permission control & lint
+#### 主要技术
 
-**Live demo:** http://panjiachen.github.io/vue-admin-template
+Vue,SpringBoot,Spring Cloud,Mysql,Redis,RabbitMQ,MybatisPlus,Shiro,Docker等
 
-[中文文档](https://github.com/PanJiaChen/vue-admin-template/blob/master/README-zh.md)
+#### 项目亮点
+
+* 项目采用微服务架构开发，各模块耦合程度低，涉及地微服务理念包括服务发现、配置中心、微服务网关、负载均衡等
+* 使用RabbitMQ实现弹幕异步存储，并解决分布式环境下WebSocket的实时弹幕推送问题
+* 使用Redisson分布式锁解决秒杀环境下的课程超卖问题以及订单重复创建的幂等性问题
+* 使用Redis完成短信登陆、注册功能，并使用Redis对查询的数据做缓存
+* 使用RabbitMQ将用户秒杀成功的消息异步保存到数据库中，并且使用RabbitMQ完成异步发送短信验证码的功能
+* 使用Docker完成项目前后端的快速部署
 
 ## Build Setup
 
 ```bash
 # Clone project
-git clone https://github.com/PanJiaChen/vue-admin-template.git
 
 # Install dependencies
 npm install
@@ -24,65 +34,3 @@ npm run build
 # Build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-## Demo
-
-![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
-
-## Extra
-
-If you want router permission && generate menu by user roles , you can use this branch [permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
-
-This project is based on `webpack4` development. If you want to use `webpack3` development, please use this branch [webpack3](https://github.com/PanJiaChen/vue-admin-template/tree/webpack3)
-
-For `typescript` version, you can use [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
-
-## Related Project
-
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-
-[electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-
-[vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template)
-
-### Element-Ui using cdn tutorial
-
-First find `index.html`([root directory](https://github.com/PanJiaChen/vue-admin-template/blob/element-ui-cdn/index.html))
-
-Import css and js of `Element`, and then import vue. Because `Element` is vue-dependent, vue must be import before it.
-
-Then find [webpack.base.conf.js](https://github.com/PanJiaChen/vue-admin-template/blob/element-ui-cdn/build/webpack.base.conf.js)
-Add `externals` to make webpack not package vue and element.
-
-```
-externals: {
-  vue: 'Vue',
-  'element-ui':'ELEMENT'
-}
-```
-
-Finally there is a small detail to pay attention to that if you import vue in global, you don't need to manually `Vue.use(Vuex)`, it will be automatically mounted, see
-[issue](https://github.com/vuejs/vuex/issues/731)
-
-And you can use `npm run build --report` to see the effect
-
-Pictured:
-![demo](https://panjiachen.github.io/images/element-cdn.png)
-
-**[Detailed code](https://github.com/PanJiaChen/vue-admin-template/commit/746aff560932704ae821f82f10b8b2a9681d5177)**
-
-**[Branch](https://github.com/PanJiaChen/vue-admin-template/tree/element-ui-cdn)**
-
-## Browsers support
-
-Modern browsers and Internet Explorer 10+.
-
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
-
-## License
-
-[MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
-
-Copyright (c) 2017-present PanJiaChen
